@@ -36,7 +36,7 @@ jobs:
           path: target/*.jar
           retention-days: 1
 
-  publish_in_heroku_registry:
+publish_in_heroku_registry:
   name: Publish in Heroku Registry
   runs-on: ubuntu-20.04
   needs: [build]
@@ -87,7 +87,6 @@ ejecutando_smoke_test:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-
     - name: Ejecucion de test Selenium
       run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.selenium.*Test' -Dhost="https://ais-extraordinaria.herokuapp.com/" test
     - name: Ejecucionde test API REST
