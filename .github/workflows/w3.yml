@@ -1,12 +1,9 @@
 name: workflow 3
 
-on: 
-  push:
+on:
+  create:
     branches:
-      - master
-##  create:
-##    branches:
-##      - release-*
+      - release-*
 jobs:
 
   build:
@@ -22,8 +19,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: target
-          path: target
-          ##retention-days: 1
+          path: target/*.jar
+          retention-days: 1
 
   publish_in_dockerhub:
     name: Publish in DockerHub
