@@ -2,7 +2,7 @@ name: por la noche
 
 on: 
   schedule:
-    - cron: '05 13 * * *'
+    - cron: '10 12 * * *'
     
     
 jobs:
