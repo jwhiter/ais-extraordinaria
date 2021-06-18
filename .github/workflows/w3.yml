@@ -1,9 +1,12 @@
 name: workflow 3
 
 on: 
-  create:
+  push:
     branches:
-      - release-*
+      - master
+##  create:
+##    branches:
+##      - release-*
 jobs:
 
   build:
