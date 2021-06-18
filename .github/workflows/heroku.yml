@@ -1,4 +1,4 @@
-name: primer workflow
+name: heroku workflow
 
 on: 
   push:
