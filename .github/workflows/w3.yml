@@ -37,7 +37,6 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: target
-          path: target/*.jar
       - name: Get version
         run: VERSION=$(mvn -q help:evaluate -Dexpression=project.version-DforceStdout)
       - name: Generate tag
