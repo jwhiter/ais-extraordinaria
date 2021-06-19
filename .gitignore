@@ -5,7 +5,7 @@
 *.classpath
 *.settings
 *.mvn
-*/target
+#*/target
 
 node_modules/
 
