@@ -5,9 +5,9 @@ name: workflow 3
 ##    branches:
 ##      - release-*
 on:
-  push:
+  pull_request:
     branches:
-      - master
+      - develope
 jobs:
 
   build:
