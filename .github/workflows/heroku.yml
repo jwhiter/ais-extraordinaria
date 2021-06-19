@@ -90,6 +90,6 @@ jobs:
         with:
           java-version: 11
       - name: Ejecucion de test Selenium
-        run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.selenium.*Test' -Dhost="https://ais-extraordinaria.herokuapp.com/" test
+        run: mvn '-Dtest=es.urjc.code.daw.library.e2e.selenium.*Test' -DHost="https://ais-extraordinaria.herokuapp.com/" test
       - name: Ejecucionde test API REST
-        run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' -Dhost="https://ais-extraordinaria.herokuapp.com/" test
+        run: mvn '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' -DHost="https://ais-extraordinaria.herokuapp.com/" test
