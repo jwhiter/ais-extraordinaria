@@ -19,7 +19,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-
+      - name: Build project with maven
+        run: mvn -B package
+        
       - name: Ejecucion Test Unitarios
         run: mvn -B '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
 
