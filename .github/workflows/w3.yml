@@ -23,7 +23,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: target
-          path: target
+          path: /target
           ##retention-days: 1
 
   publish_in_dockerhub:
