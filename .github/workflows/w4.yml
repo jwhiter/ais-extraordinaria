@@ -10,7 +10,7 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on:  ubuntu-20.04
     steps:
       - name: Checkout commit
         uses: actions/checkout@v2
@@ -21,15 +21,15 @@ jobs:
           java-version: 11
       - name: Build project with maven
         run: mvn -B package
-        
-      - name: Ejecucion Test Unitarios
-        run: mvn -B '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
 
-      - name: Ejecucion Test API REST
-        run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
+    #  - name: Ejecucion Test Unitarios
+    #    run: mvn -B '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
 
-      - name: Ejecucion Test Selenium
-        run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.selenium.*Test' test
+    #  - name: Ejecucion Test API REST
+    #    run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
+
+    #  - name: Ejecucion Test Selenium
+    #    run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.selenium.*Test' test
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
