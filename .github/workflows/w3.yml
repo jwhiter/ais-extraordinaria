@@ -20,7 +20,7 @@ jobs:
         with:
           java-version: 11
       - name: Build project with maven
-        run: mvn -B –DskipTests package 
+        run: mvn –DskipTests -B package  
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
@@ -31,7 +31,7 @@ jobs:
   Ejecucion_test:
     name: ejecutar Test Unitarios y API REST
 
-    runs-on:ubuntu-20.04
+    runs-on: ubuntu-20.04
     needs: [build]
     steps: 
       - name: Ejecucion Test Unitarios
