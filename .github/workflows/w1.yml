@@ -21,7 +21,7 @@ jobs:
         with:
           java-version: 11
       - name: Build project with Maven
-        run: mvn -B package –DskipTests
+        run: mvn -B –DskipTests package 
       
       
   Ejecucion_test:
