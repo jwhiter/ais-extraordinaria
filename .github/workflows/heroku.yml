@@ -19,8 +19,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      #- name: Build project with maven
-      #  run: mvn -B package
+      - name: Build project with maven
+        run: mvn -B package –DskipTests
         
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
@@ -32,7 +32,7 @@ jobs:
   Ejecucion_test:
     name: ejecutar Test Unitarios y API REST
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: [build]
     steps: 
       - name: Ejecucion Test Unitarios
@@ -48,7 +48,7 @@ jobs:
   publish_in_heroku_registry:
     name: Publish in Heroku Registry
     runs-on: ubuntu-20.04
-    needs: [build]
+    needs: [Ejecucion_test]
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       HEROKU_APP: ${{ secrets.HEROKU_APP }}
