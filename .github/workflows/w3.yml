@@ -19,8 +19,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-    #  - name: Build project with maven
-    #    run: mvn -DskipTests -B package 
+      - name: Build project with maven
+        run: mvn -B package -DskipTests
+        
       - name: Ejecucion Test Unitarios
         run: mvn -B '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
 
@@ -31,7 +32,7 @@ jobs:
         run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.selenium.*Test' test
 
       - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: target
           path: target/*.jar
