@@ -31,7 +31,14 @@ jobs:
     needs: [build]
     steps: 
       - name: Ejecucion Test Unitarios
-        run: mvn '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
+        run: mvn -B '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
 
       - name: Ejecucion Test API REST
-        run: mvn '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
+        run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
+      
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: target
+          path: target/*.jar
+          retention-days: 1
