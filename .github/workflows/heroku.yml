@@ -20,7 +20,7 @@ jobs:
         with:
           java-version: 11
       - name: Build project with maven
-        run: mvn –DskipTests -B package  
+        run: mvn -DskipTests -B package  
         
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
