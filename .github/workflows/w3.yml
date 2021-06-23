@@ -55,7 +55,7 @@ jobs:
   publish_in_dockerhub:
     name: Publish in DockerHub
     runs-on: ubuntu-20.04
-    needs: [Ejecucion_test]
+    needs: [build]
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
