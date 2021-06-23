@@ -31,7 +31,7 @@ jobs:
     needs: [build]
     steps: 
       - name: Ejecucion Test Unitarios
-        run: mvn -B '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
+        run: mvn '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
 
       - name: Ejecucion Test API REST
-        run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
+        run: mvn '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
